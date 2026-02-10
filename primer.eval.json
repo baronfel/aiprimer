@@ -1,0 +1,65 @@
+{
+  "instructionFile": ".github/copilot-instructions.md",
+  "cases": [
+    {
+      "id": "project-overview",
+      "category": "understanding",
+      "prompt": "Summarize what this application does and list the main entrypoints.",
+      "expectation": "Should mention that Primer is a .NET CLI tool for priming repositories for AI-assisted development. Should reference Program.cs as the entrypoint and mention key command directories."
+    },
+    {
+      "id": "tech-stack",
+      "category": "understanding",
+      "prompt": "What languages, frameworks, and key dependencies does this project use?",
+      "expectation": "Should identify C#, .NET 10, System.CommandLine, Spectre.Console, LibGit2Sharp, and Octokit. Should mention NuGet as the package manager."
+    },
+    {
+      "id": "build-test-run",
+      "category": "development",
+      "prompt": "How do I build, test, and run this project locally?",
+      "expectation": "Should mention 'dotnet build dotnet/Primer.slnx' or similar. Should mention 'dotnet run --project dotnet/src/Primer' with example subcommands. Should note .NET 10 SDK is required."
+    },
+    {
+      "id": "project-structure",
+      "category": "understanding",
+      "prompt": "Describe the project directory structure and what each key directory contains.",
+      "expectation": "Should describe dotnet/src/Primer/Commands/ (CLI subcommands), dotnet/src/Primer/Services/ (core logic), dotnet/src/Primer/Utils/ (helpers), and .github/ (Copilot instructions)."
+    },
+    {
+      "id": "coding-conventions",
+      "category": "conventions",
+      "prompt": "What coding conventions and style rules does this project follow?",
+      "expectation": "Should mention nullable reference types, implicit usings, async/await for I/O, records for DTOs, and the System.CommandLine 2.0.2 API patterns (SetAction, Options.Add)."
+    },
+    {
+      "id": "testing",
+      "category": "development",
+      "prompt": "How are tests organized in this project? What testing frameworks are used?",
+      "expectation": "Should acknowledge the current testing setup (or lack thereof) accurately based on the actual project state."
+    },
+    {
+      "id": "ci-cd",
+      "category": "infrastructure",
+      "prompt": "What CI/CD pipelines does this project use? Describe the workflow.",
+      "expectation": "Should accurately describe any CI/CD configuration present, or note its absence if none exists."
+    },
+    {
+      "id": "error-handling",
+      "category": "conventions",
+      "prompt": "How should I handle errors and exceptions in this codebase? Show the pattern used.",
+      "expectation": "Should describe the try/catch patterns in command handlers, the use of exit codes (0 for success, 1 for error), and Console.Error.WriteLine for error output."
+    },
+    {
+      "id": "new-feature-workflow",
+      "category": "development",
+      "prompt": "I want to add a new CLI subcommand. Walk me through the steps and patterns to follow.",
+      "expectation": "Should describe creating a new file in Commands/, using the static Build() pattern returning a Command, wiring it in Program.cs via Subcommands.Add, and using SetAction for the handler."
+    },
+    {
+      "id": "config-files",
+      "category": "understanding",
+      "prompt": "What configuration files exist in this project and what do they control?",
+      "expectation": "Should mention Primer.csproj (project config, target framework, dependencies), Primer.slnx (solution file), .github/copilot-instructions.md (Copilot guidance), and primer.eval.json (eval test cases)."
+    }
+  ]
+}
