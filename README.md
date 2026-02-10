@@ -58,6 +58,16 @@ dotnet run --project dotnet/src/Primer -- init --yes
 dotnet run --project dotnet/src/Primer -- init --github
 ```
 
+To run an eval on another repo:
+
+```bash
+# Initialize the repo to create the tests
+dotnet run --project dotnet/src/Primer -- eval --init --repo path_to_repo
+
+# Run the evaluation
+dotnet run --project dotnet/src/Primer -- eval --repo  path_to_repo
+```
+
 ### Interactive Mode (TUI)
 
 ```bash
