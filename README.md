@@ -28,7 +28,7 @@ Primer is a .NET CLI tool that analyzes your codebase and generates `.github/cop
 
 ```bash
 # Clone the repository
-git clone https://github.com/pierceboggan/primer.git
+git clone https://github.com/webreidi/aiprimer.git
 cd primer
 
 # Restore dependencies
